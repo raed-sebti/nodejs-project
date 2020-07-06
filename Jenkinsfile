@@ -11,7 +11,7 @@
          /* This builds the actual image; synonymous to
           * docker build on the command line */
 
-         app = docker.build("raedsebti/hellonode")
+         app = docker.build("raedsebti/hellonode-dev-branch")
      }
 
      stage('Test image') {
@@ -33,7 +33,7 @@
      }
      stage('Run Container') {
       docker.withServer('tcp://192.168.1.10:2375') {
-      docker.image('registry.hub.docker.com/raedsebti/hellonode:latest').withRun('-p 8090:8080') {
+      docker.image('registry.hub.docker.com/raedsebti/hellonode-dev-branch').withRun('-p 8090:8080') {
         }
       }
     }
