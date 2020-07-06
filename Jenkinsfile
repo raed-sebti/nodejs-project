@@ -32,8 +32,8 @@
          }
      }
      stage('Run Container') {
-      docker.withServer('tcp://<DOCKER-HOST>:2375') {
-      docker.image('registry.hub.docker.com/<username>/hellonode:latest').withRun('-p 8090:8080') {
+      docker.withServer('tcp://192.168.1.10:2375') {
+      docker.image('registry.hub.docker.com/raedsebti/hellonode:latest').withRun('-p 8090:8080') {
         }
       }
     }
